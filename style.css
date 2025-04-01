@@ -8,16 +8,34 @@ body {
 
 /* Top Navigation Bar */
 .topnav {
-  background: linear-gradient(90deg, #00ffe1, #00b3ff);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  background: linear-gradient(90deg, rgba(57, 255, 186, 0.633), rgba(77, 110, 98, 0.3));
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
 }
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  text-shadow:  
+  2px 2px 5px rgba(255, 255, 255, 1),     /* Soft white glow */
+  2px 2px 10px rgba(255, 255, 255, 0.9),  /* Medium glow */
+  2px 2px 20px rgba(255, 255, 255, 0.8),  /* Strong outer glow */
+  2px 2px 30px rgba(255, 255, 255, 0.7),  /* Extra strong glow */
+  2px 2px 40px rgba(255, 255, 255, 0.6);  /* Even stronger glow */
+  letter-spacing: 2px;
+}
+
 
 .topnav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
 }
 
 .topnav ul li {
@@ -28,7 +46,7 @@ body {
   display: block;
   padding: 15px 20px;
   text-decoration: none;
-  color: #0e0e0e;
+  color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
   font-weight: bold;
   transition: background 0.3s ease;
@@ -46,8 +64,47 @@ body {
 }
 
 /* Sidebar Styles */
+.light-red {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px; /* Adjust spacing between the dot and text */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: red;
+  position: relative;
+  top: 3px;
+}
+
+.light-yellow {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px; /* Adjust spacing between the dot and text */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: yellow;
+  position: relative;
+  top: 3px;
+}
+
+.light-green {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 8px; /* Adjust spacing between the dot and text */
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: green;
+  position: relative;
+  top: 3px;
+}
+
 .sidebar {
-  width: 250px;
+  width: 350px;
   background-color: #121212;
   padding: 20px;
   min-height: calc(100vh - 60px); /* Adjust based on nav bar height */
@@ -75,6 +132,7 @@ body {
   margin: 5px 0;
   border-radius: 5px;
   transition: background 0.3s ease;
+  display: flex;
 }
 
 .sidebar .nav-item:hover {
@@ -85,6 +143,7 @@ body {
   background-color: #00b3ff;
   color: #0e0e0e;
 }
+
 
 /* Content Area */
 .content {
@@ -98,9 +157,10 @@ body {
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.7);
-  border: 1px solid #00ffe1;
+  box-shadow: 0 4px 15px rgba(128, 128, 128, 0.3), /* Soft smoky effect */
+              0 2px 10px rgba(0, 0, 0, 0.7); /* Existing shadow */
 }
+
 
 .card h2 {
   margin-top: 0;
