@@ -20,7 +20,7 @@ navItems.forEach(item => {
 function createGradient(ctx) {
     let gradient = ctx.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(0, "rgba(57, 255, 186, 1)");  // Neon Cyan (Top)
-    gradient.addColorStop(1, "rgba(77, 110, 98, 0.3)");  // Hot Pink (Bottom)
+    gradient.addColorStop(1, "rgba(77, 110, 98, 0.1)");  // Hot Pink (Bottom)
     return gradient;
 }
 
@@ -44,7 +44,7 @@ new Chart(vehicleCountCtx, {
     labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h"],
     datasets: [{
       label: "Traffic Flow",
-      data: [10, 50, 80, 200, 180, 120, 90], 
+      data: [10, 50, 80, 300, 180, 120, 90], 
       borderColor: "#39ffba",
       borderWidth: 2,
       backgroundColor: createGradient(vehicleCountCtx), 
@@ -143,9 +143,9 @@ new Chart(trafficDensityCtx, {
 // High-Speed Vehicles Chart
 const highSpeedCtx = document.getElementById("highSpeedChart").getContext("2d");
 new Chart(highSpeedCtx, {
-  type: "bar",
+  type: "line",
   data: {
-    labels: ["80-100 km/h", "100-120 km/h", "120-140 km/h", "140+ km/h"],
+    labels: ["1", "2", "3", "4"],
     datasets: [{
       label: "High-Speed Vehicles",
       data: [10, 15, 20, 5],

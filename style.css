@@ -72,9 +72,14 @@ body {
   height: 8px;
   border-radius: 50%;
   padding: 5px;
-  background-color: red;
+  background-color: #121212;
   position: relative;
   top: 3px;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.nav-item:hover .light-red {
+  background-color: red;
 }
 
 .light-yellow {
@@ -85,9 +90,13 @@ body {
   height: 8px;
   border-radius: 50%;
   padding: 5px;
-  background-color: yellow;
+  background-color: #121212;
   position: relative;
   top: 3px;
+}
+
+.nav-item:hover .light-yellow{
+  background-color: yellow;
 }
 
 .light-green {
@@ -98,11 +107,14 @@ body {
   height: 8px;
   border-radius: 50%;
   padding: 5px;
-  background-color: green;
+  background-color: #121212;
   position: relative;
   top: 3px;
 }
 
+.nav-item:hover .light-green{
+  background-color: green;
+}
 .sidebar {
   width: 350px;
   background-color: #121212;
