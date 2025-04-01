@@ -26,13 +26,13 @@ function createGradient(ctx) {
 
 // Sample data (Replace with backend data later)
 const sampleLineData = {
-  labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h"],
+  labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" ],
   datasets: [{
     label: "Sample Data",
-    data: [12, 19, 3, 5, 2, 3, 10],
+    data: [12, 19, 3, 5, 2, 3, 10, 13, 4, 12, 10, 11, 16],
     borderColor: "#39ff14",
     backgroundColor: "rgba(57, 255, 20, 0.2)",
-    tension: 0.4
+    tension: 1
   }]
 };
 
@@ -41,14 +41,14 @@ const vehicleCountCtx = document.getElementById("vehicleCountChart").getContext(
 new Chart(vehicleCountCtx, {
   type: "line",
   data: {
-    labels: ["0h", "1h", "2h", "3h", "4h", "5h", "6h"],
+    labels: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11" ],
     datasets: [{
       label: "Traffic Flow",
-      data: [10, 50, 80, 300, 180, 120, 90], 
+      data: [10, 50, 80, 300, 180, 120, 90, 50, 60, 55, 67, 75], 
       borderColor: "#39ffba",
       borderWidth: 2,
       backgroundColor: createGradient(vehicleCountCtx), 
-      tension: 0.8,
+      tension: 0.5,
       fill: true,
       pointRadius: 0
     }]

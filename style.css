@@ -115,6 +115,10 @@ body {
 .nav-item:hover .light-green{
   background-color: green;
 }
+.nav-item:active .light-green{
+  background-color: green;
+}
+
 .sidebar {
   width: 350px;
   background-color: #121212;
