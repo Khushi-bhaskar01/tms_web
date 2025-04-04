@@ -3,13 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upload - Futuristic Dashboard</title>
-  <!-- Google Fonts for futuristic feel -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <title>Upload - RASTRAK</title>
+  <!-- Google Font: Exo -->
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="upload.css" />
 </head>
 <body>
-  <!-- Top Navigation Bar -->
+  <!-- Futuristic Floating Elements -->
+  <div class="floating-particles">
+    <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+    <div class="particle" style="top: 50%; left: 70%; animation-delay: 1s;"></div>
+    <div class="particle" style="top: 80%; left: 40%; animation-delay: 2s;"></div>
+  </div>
+
+  <div class="neon-circle" style="top: 30%; left: 10%; animation-delay: 1s;"></div>
+  <div class="neon-circle" style="top: 70%; right: 20%; animation-delay: 2s;"></div>
+
+  <div class="light-ray" style="top: 20%; left: 50%;"></div>
+  
+  <!-- Navbar -->
   <nav class="topnav">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -19,6 +31,7 @@
     </ul>
   </nav>
 
+  <!-- Upload Section -->
   <div class="upload-container">
     <h1>Upload Video</h1>
     <form action="upload_handler.php" method="post" enctype="multipart/form-data">
@@ -30,4 +43,5 @@
     </form>
   </div>
 </body>
+
 </html>

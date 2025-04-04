@@ -1,106 +1,186 @@
-/* Futuristic Upload Page Styles */
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: 'Orbitron', sans-serif;
-    background: linear-gradient(135deg, #0e0e0e, #1a1a1a);
-    color: #e0e0e0;
-    min-height: 100vh;
-  }
-  
-  /* Top Navigation Bar */
-  .topnav {
-    background: linear-gradient(90deg, #00ffe1, #00b3ff);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  .topnav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-  }
-  
-  .topnav ul li {
-    margin: 0 20px;
-  }
-  
-  .topnav ul li a {
-    display: block;
-    padding: 15px 20px;
-    text-decoration: none;
-    color: #0e0e0e;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background 0.3s ease;
-  }
-  
-  .topnav ul li a:hover,
-  .topnav ul li a.active {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
-  }
-  
-  /* Upload Container */
-  .upload-container {
-    width: 400px;
-    background: rgba(0, 0, 0, 0.7);
-    margin: 80px auto;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-    text-align: center;
-  }
-  
-  .upload-container h1 {
-    margin-bottom: 30px;
-    color: #00ffe1;
-    text-shadow: 0 0 10px #00ffe1;
-  }
-  
-  /* Input Group */
-  .input-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
-    color: #00b3ff;
-  }
-  
-  .input-group input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    background: #222;
-    color: #e0e0e0;
-    border: none;
-    border-radius: 8px;
-  }
-  
-  /* Button Styling */
-  .btn {
-    width: 100%;
-    padding: 15px;
-    background: linear-gradient(90deg, #00ffe1, #00b3ff);
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #0e0e0e;
-    cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-  }
-  
-  .btn:hover {
-    transform: scale(1.05);
-    background: linear-gradient(90deg, #00b3ff, #00ffe1);
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Exo', sans-serif;
+  background-color: #000000f1;
+  height: 100vh;
+  overflow: hidden;
+  background-size: 100% auto;
+  z-index: -1;
+}
+
+/* Sticky Navbar (Same as Login Page) */
+.topnav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(89, 103, 105, 0.7);
+  padding-top: 30px;
+}
+
+.topnav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.topnav ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.topnav ul li a:hover,
+.topnav ul li a.active:hover{
+  color: white;
+  text-shadow: 0 0 8px rgb(130, 211, 181);
+}
+
+/* Upload Container */
+.upload-container {
+  position: relative;
+  z-index: 10;
+  background: rgba(27, 29, 29, 0.6);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 255, 229, 0.5);
+  width: 350px;
+  margin: auto;
+  margin-top: 160px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+/* Heading */
+.upload-container h1 {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgb(0, 255, 195);
+}
+
+/* Input Group */
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group label {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: #bbb;
+}
+
+.input-group input:focus {
+  background-color: rgba(255, 255, 255, 0.15);
+  outline: none;
+  box-shadow: 0 0 5px rgb(94, 181, 155);
+}
+
+/* Upload Button */
+.btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  background-color: rgb(0, 255, 208);
+  border: none;
+  color: black;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00d4a6;
+  box-shadow: 0 0 10px rgb(65, 200, 168);
+}
+/* Floating Particle Animation */
+@keyframes floatParticles {
+  0% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(-15px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.5; }
+}
+
+.floating-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 255, 208, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 255, 208, 0.8);
+  animation: floatParticles 3s infinite ease-in-out alternate;
+}
+
+/* Pulsating Neon Circles */
+@keyframes neonPulse {
+  0% { transform: scale(0.8); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.6; }
+  100% { transform: scale(0.8); opacity: 0.3; }
+}
+
+.neon-circle {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  animation: neonPulse 4s infinite ease-in-out;
+}
+
+/* Background Light Rays */
+@keyframes lightRays {
+  0% { opacity: 0.2; transform: translateX(-50%) rotate(0deg); }
+  50% { opacity: 0.5; transform: translateX(-50%) rotate(10deg); }
+  100% { opacity: 0.2; transform: translateX(-50%) rotate(0deg); }
+}
+
+.light-ray {
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  background: linear-gradient(90deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.3));
+  filter: blur(20px);
+  animation: lightRays 6s infinite linear;
+}

@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - Futuristic Dashboard</title>
-  <!-- Google Fonts for futuristic feel -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <title>Futuristic Traffic Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="login.css" />
 </head>
 <body>
-  <!-- Top Navigation Bar -->
+
+  <!-- Sticky Navbar -->
   <nav class="topnav">
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html" class="active">Home</a></li>
       <li><a href="upload.html">Upload</a></li>
       <li><a href="processed_videos.html">Processed Videos</a></li>
       <li><a href="analysis.html">Analysis</a></li>
     </ul>
   </nav>
+  <video autoplay loop muted playsinline class="background-video">
+    <source src="road_video.mp4" type="video/mp4">
+  </video>
+  
 
+  <!-- Login Box -->
   <div class="login-container">
-    <form class="login-form" action="dashboard.html" method="post">
+    <form class="login-form" onsubmit="redirectToAbout(event)">
       <h1>Login</h1>
       <div class="input-group">
         <label for="username">Username</label>
@@ -30,8 +35,19 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required placeholder="Enter your password" />
       </div>
-      <button type="submit" class="btn">Sign In</button>
+      <button type="submit" class="btn">Login</button>
+      <p>Don't have an account? <a href="signup.html">Signup</a></p>
+      <p id="login-msg"></p>
     </form>
+    
+    <script>
+      function redirectToAbout(event) {
+        event.preventDefault(); // Prevents form submission and page reload
+        window.location.href = "about.html"; // Redirect to About page
+      }
+    </script>
+    <script src="signup.js"></script>
   </div>
 </body>
+
 </html>
