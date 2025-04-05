@@ -2,43 +2,61 @@
 body {
   margin: 0;
   font-family: 'Exo', sans-serif;
-  background-color: #0e0e0e;
-  color: #e0e0e0;
+  background:url('bg_img2.png') no-repeat center center fixed;
+  color:white;
+  background-size: cover;
+  overflow: hidden;
+  padding: 0;
 }
 
-/* Top Navigation Bar */
 .topnav {
   position: sticky;
   top: 0;
+  left: 0;
+  width: 100%;
   backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.484);
+  padding: 12px 30px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   z-index: 100;
   box-shadow: 0 4px 10px rgba(89, 103, 105, 0.7);
-  padding-top: 3px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
+.nav-left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffd5;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
 
-.topnav ul {
+.nav-right ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 40px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
 }
 
-.topnav ul li a {
+.nav-right ul li a {
   color: #ccc;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: bold;
   transition: 0.3s ease;
+  white-space: nowrap;
 }
 
-.topnav ul li a:hover,
-.topnav ul li a.active:hover {
+.nav-right ul li a:hover,
+.nav-right ul li a.active:hover {
   color: white;
-  text-shadow: 0 0 8px rgb(130, 211, 181);
+  text-shadow: 0 0 2px rgb(130, 211, 181);
 }
 
 
@@ -189,7 +207,7 @@ canvas {
 /* Button */
 .btn {
   padding: 12px 25px;
-  background: linear-gradient(90deg, #00ffe1, #00b3ff);
+  background: linear-gradient(90deg, #43dac8, #00c8ff);
   color: #0e0e0e;
   border: none;
   border-radius: 25px;
@@ -203,7 +221,7 @@ canvas {
 }
 
 .btn:hover {
-  background: linear-gradient(90deg, #00b3ff, #00ffe1);
+  background: linear-gradient(90deg, #36a3d6, #00f5e5);
 }
 
 /* Responsive Adjustments */

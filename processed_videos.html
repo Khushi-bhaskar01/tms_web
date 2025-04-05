@@ -1,55 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Processed Videos - TMS Dashboard</title>
-  <link rel="stylesheet" href="processed_videos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Processed Videos</title>
+  <link rel="stylesheet" href="processed_videos.css" />
 </head>
 <body>
 
-  <!-- 🚗 Navigation Bar (Clean, Sleek, & Sticky) -->
-  <nav class="topnav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="upload.html">Upload</a></li>
-      <li><a href="processed_videos.html" class="active">Processed Videos</a></li>
-      <li><a href="analysis.html">Analysis</a></li>
-    </ul>
-  </nav>
-
-  <!-- 🌟 Main Content -->
-  <div class="videos-container">
-    <h1>🚦 Processed Traffic Videos</h1>
-    <p class="subheading">AI-analyzed footage for traffic monitoring & violations</p>
-
-    <div class="videos-list">
-      <!-- 🎥 Video Card 1 -->
-      <div class="video-card">
-        <div class="video-thumb">
-          <img src="thumbnail1.jpg" alt="Video Thumbnail">
-        </div>
-        <div class="video-info">
-          <h2>City Highway - Speed Violation</h2>
-          <p>Analyzed on: 2025-03-27</p>
-          <a href="video_detail.html?id=1" class="btn">View Details</a>
-        </div>
-      </div>
-
-      <!-- 🎥 Video Card 2 -->
-      <div class="video-card">
-        <div class="video-thumb">
-          <img src="thumbnail2.jpg" alt="Video Thumbnail">
-        </div>
-        <div class="video-info">
-          <h2>Intersection - Signal Jump</h2>
-          <p>Analyzed on: 2025-03-26</p>
-          <a href="video_detail.html?id=2" class="btn">View Details</a>
-        </div>
-      </div>
+  <!-- Navbar -->
+  <div class="topnav">
+    <div class="nav-left">
+      <span class="logo">RASTRAK</span>
+    </div>
+    <div class="nav-right">
+      <ul>
+        <li><a href="about.html">Home</a></li>
+        <li><a href="upload.html">Upload</a></li>
+        <li><a href="processed_videos.html" class="active">Processed Video</a></li>
+        <li><a href="analysis.html">Analysis</a></li>
+      </ul>
     </div>
   </div>
 
+  <!-- Heading -->
+  <div class="heading">
+    <h1>Processed Videos🚦</h1>
+  </div>
+
+  <!-- Table Layout for Videos -->
+  <table class="video-table">
+    <thead>
+      <tr>
+        <th>S. No.</th>
+        <th>Video Name</th>
+        <th>Thumbnail</th>
+        <th>Analysis</th>
+        <th>View Video</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Video 1</td>
+        <td><img src="thumb1.jpg" alt="Thumbnail 1" class="thumbnail"/></td>
+        <td><button class="btn" onclick="viewAnalysis('analysis1')">View Analysis</button></td>
+        <td><button class="btn" onclick="openModal('video1.mp4')">View Video</button></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Video 2</td>
+        <td><img src="thumb2.jpg" alt="Thumbnail 2" class="thumbnail"/></td>
+        <td><button class="btn" onclick="viewAnalysis('analysis2')">View Analysis</button></td>
+        <td><button class="btn" onclick="openModal('video2.mp4')">View Video</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Video Modal -->
+  <div id="videoModal" class="video-modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <video id="videoPlayer" controls autoplay></video>
+  </div>
+
+  <script>
+    function openModal(videoSrc) {
+      const modal = document.getElementById("videoModal");
+      const player = document.getElementById("videoPlayer");
+      player.src = videoSrc;
+      modal.style.display = "flex";
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("videoModal");
+      const player = document.getElementById("videoPlayer");
+      player.pause();
+      player.currentTime = 0;
+      modal.style.display = "none";
+    }
+
+    function viewAnalysis(id) {
+      alert(`Redirecting to ${id} analysis page or displaying modal.`);
+    }
+  </script>
 </body>
 </html>

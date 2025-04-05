@@ -1,39 +1,39 @@
 /* Global Styles */
 @import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Exo', sans-serif;
-  background-color: #000000f1;
+  background: url('https://media.istockphoto.com/id/1354911663/photo/city-traffic-with-cars-aligned-on-a-street-at-night-in-a-rainy-day.jpg?s=170667a&w=0&k=20&c=0p7sZmYIcX2yXIC12UQ4vNQhIZ1dgy-8XzRs01RCAIA=') no-repeat center center fixed;
+  background-size: cover;
   height: 100vh;
   overflow: hidden;
-  background-size: 100% auto;
-  z-index: -1;
+  padding: 0;
 }
-
-/* Sticky Navbar (Same as Login Page) */
-.topnav {
-  position: sticky;
+/* .topnav {
+  position: fixed;
   top: 0;
+  width: 100%;
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.5);
   padding: 15px 40px;
   display: flex;
   justify-content: center;
+  align-items: center;
   z-index: 100;
   box-shadow: 0 4px 10px rgba(89, 103, 105, 0.7);
-  padding-top: 30px;
 }
 
 .topnav ul {
   list-style: none;
   display: flex;
   gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav ul li {
+  display: flex;
+  align-items: center;
 }
 
 .topnav ul li a {
@@ -45,19 +45,69 @@ body {
 }
 
 .topnav ul li a:hover,
-.topnav ul li a.active:hover{
+.topnav ul li a.active:hover {
   color: white;
-  text-shadow: 0 0 8px rgb(130, 211, 181);
+  text-shadow: 0 0 2px rgb(130, 211, 181);
+} */
+.topnav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.484);
+  padding: 12px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(89, 103, 105, 0.7);
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
+
+.nav-left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffd5;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.nav-right ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.nav-right ul li a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-right ul li a:hover,
+.nav-right ul li a.active:hover {
+  color: white;
+  text-shadow: 0 0 2px rgb(130, 211, 181);
+}
+
 
 /* Upload Container */
 .upload-container {
   position: relative;
   z-index: 10;
-  background: rgba(27, 29, 29, 0.6);
+  background: rgba(0, 0, 0, 0.662);
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 255, 229, 0.5);
+  box-shadow: 0 0 2px rgba(0, 255, 229, 0.5);
   width: 350px;
   margin: auto;
   margin-top: 160px;
@@ -70,7 +120,6 @@ body {
   color: white;
   font-size: 2rem;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px rgb(0, 255, 195);
 }
 
 /* Input Group */
@@ -123,64 +172,6 @@ body {
 
 .btn:hover {
   background-color: #00d4a6;
-  box-shadow: 0 0 10px rgb(65, 200, 168);
-}
-/* Floating Particle Animation */
-@keyframes floatParticles {
-  0% { transform: translateY(0); opacity: 0.5; }
-  50% { transform: translateY(-15px); opacity: 1; }
-  100% { transform: translateY(0); opacity: 0.5; }
+  box-shadow: 0 0 4px rgb(65, 200, 168);
 }
 
-.floating-particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  pointer-events: none;
-  z-index: -2;
-}
-
-.particle {
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  background: rgba(0, 255, 208, 0.8);
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 255, 208, 0.8);
-  animation: floatParticles 3s infinite ease-in-out alternate;
-}
-
-/* Pulsating Neon Circles */
-@keyframes neonPulse {
-  0% { transform: scale(0.8); opacity: 0.3; }
-  50% { transform: scale(1.2); opacity: 0.6; }
-  100% { transform: scale(0.8); opacity: 0.3; }
-}
-
-.neon-circle {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: rgba(0, 255, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  animation: neonPulse 4s infinite ease-in-out;
-}
-
-/* Background Light Rays */
-@keyframes lightRays {
-  0% { opacity: 0.2; transform: translateX(-50%) rotate(0deg); }
-  50% { opacity: 0.5; transform: translateX(-50%) rotate(10deg); }
-  100% { opacity: 0.2; transform: translateX(-50%) rotate(0deg); }
-}
-
-.light-ray {
-  position: absolute;
-  width: 150px;
-  height: 300px;
-  background: linear-gradient(90deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.3));
-  filter: blur(20px);
-  animation: lightRays 6s infinite linear;
-}

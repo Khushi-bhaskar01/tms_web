@@ -9,20 +9,61 @@
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar">
-    <h2>🚦 RASTRAK</h2>
-    <ul>
-      
-      <li><a href="upload.html">Upload</a></li>
-      <li><a href="analysis.html">Analytics</a></li>
-    </ul>
-  </nav>
-  <h1 data-text="RASTRAK" >RASTRAK</h1>
+  <div class="topnav">
+    <div class="nav-left">
+      <span class="logo">RASTRAK</span>
+    </div>
+    <div class="nav-right">
+      <ul>
+        <li><a href="about.html">Home</a></li>
+        <li><a href="upload.html">Upload</a></li>
+        <li><a href="processed_videos.html" class="active">Processed Video</a></li>
+        <li><a href="analysis.html">Analysis</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="logout-container">
+    <button class="logout-btn" onclick="logout()">🚨Logout</button>
+</div>
+
+  
+
+  <!-- <h1 data-text="RASTRAK" >RASTRAK</h1> -->
+
+  <div class="container">
+    <div class="bouncing-text">
+      <span>R</span><span>A</span><span>S</span><span>T</span><span>R</span><span>A</span><span>K</span>
+    </div>
+  </div>
+  
+
   <!-- Main Hero Section -->
   <section class="hero">
-    <p>RASTRAK: Road and Street Traffic Regulation & Analysis Kendra</p>
-    <p>RASTRAK is an advanced AI-powered Traffic Monitoring and Violation Detection System designed to enhance road safety,<br> reduce traffic congestion, <br> and ensure compliance with traffic regulations..</p>
+    <p style="font-size: 1.3rem;">🚦 <strong>RASTRAK:</strong> <em>Road and Street Traffic Regulation & Analysis Kendra</em> </p>
+    <p> RASTRAK is an advanced <strong>AI-powered Traffic Monitoring</strong> and <strong>Violation Detection System</strong> <br>
+      built to enhance <strong>road safety</strong> ,<br>
+      reduce <strong>traffic congestion</strong> ,<br>
+      and ensure full <strong>compliance with traffic rules</strong> .</p>
   </section>
-
+  
+  
+  <script>
+    function logout() {
+      
+      window.location.href = "index.html";
+    }
+    
+    function restartAnimation() {
+      const letters = document.querySelectorAll('.bouncing-text span');
+       letters.forEach(letter => {
+       letter.style.animation = 'none';
+       letter.offsetHeight; // trigger reflow
+       letter.style.animation = '';
+      });
+    }
+    setInterval(restartAnimation, 4000); // replay every 4s
+  </script>
+  
+  
 </body>
 </html>

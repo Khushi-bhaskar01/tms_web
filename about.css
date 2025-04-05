@@ -4,12 +4,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Exo', sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #0a2c2f, #12403b, #2c5364); /* Dark futuristic gradient */
+  background-image: url("bg_img.png");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: white;
   text-align: center;
   display: flex;
@@ -18,94 +20,145 @@ body {
   justify-content: center;
   height: 100vh;
 }
-
-/* Navbar */
-.navbar {
+.topnav {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(46, 46, 46, 0.7);
-  backdrop-filter: blur(8px);
-  padding: 15px;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.484);
+  padding: 12px 30px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   z-index: 100;
+  box-shadow: 0 4px 10px rgba(89, 103, 105, 0.7);
+  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
-.navbar h2 {
-  color: rgb(112, 250, 206);
-  margin-left: 20px;
+.nav-left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00ffd5;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
-.navbar h2:hover {
-  color: rgb(250, 255, 253);
-  text-shadow: 0 0 8px rgb(76, 230, 217);
-}
-.navbar ul {
+
+.nav-right ul {
   list-style: none;
   display: flex;
-  gap: 20px;
-  margin-right: 20px;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
 }
 
-.navbar ul li {
-  display: inline;
-}
-
-.navbar ul li a {
+.nav-right ul li a {
+  color: #ccc;
   text-decoration: none;
-  color: rgb(124, 236, 195);
+  font-size: 1.1rem;
   font-weight: bold;
+  transition: 0.3s ease;
+  white-space: nowrap;
 }
 
-.navbar ul li a:hover {
+.nav-right ul li a:hover,
+.nav-right ul li a.active:hover {
   color: white;
-  text-shadow: 0 0 8px rgb(76, 230, 217);
+  text-shadow: 0 0 2px rgb(130, 211, 181);
 }
 
-/* Hero Section */
-.hero {
-  margin-top: 100px;
+.logout-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  padding: 50px;
+  z-index: 999;
 }
 
-.hero p {
+.logout-btn {
+  background-color: #c7616b;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+  background-color: #e84150;
+}
+
+.hero {
+  background: rgba(141, 141, 141, 0.126); 
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white; 
+  text-align: center;
   font-size: 1.2rem;
-  margin-top: 10px;
-  opacity: 0.8;
-}
-h1 {
-  position: relative;
-  font-size: 5vw;
-  color: #252839;
-  -webkit-text-stroke: 0.3vw #383d52;
-  text-transform: uppercase;
+  font-weight: bold;
+  max-width: 80%;
+  margin: 10px auto;
 }
 
-h1::before {
-  content: attr(data-text);
+.container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.bouncing-text span {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 4.5rem;
+  color: #848585f6; /* Light green */
+  animation: bounce 2s ease-in-out forwards;
+  opacity: 0;
+}
+.bouncing-text {
+  position: relative;
+  top: -20px; /* Moves the text up */
+}
+
+.bouncing-text span:nth-child(1) { animation-delay: 0s; }
+.bouncing-text span:nth-child(2) { animation-delay: 0.2s; }
+.bouncing-text span:nth-child(3) { animation-delay: 0.4s; }
+.bouncing-text span:nth-child(4) { animation-delay: 0.6s; }
+.bouncing-text span:nth-child(5) { animation-delay: 0.8s; }
+.bouncing-text span:nth-child(6) { animation-delay: 1s; }
+.bouncing-text span:nth-child(7) { animation-delay: 1.2s; }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  40% {
+    transform: translateY(-25px);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.hero::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  color: #01fe87;
-  -webkit-text-stroke: 0vw #383d52;
-  border-right: 2px solid #01fe87;
-  overflow: hidden;
-  animation: animate 6s linear infinite;
-}
-
-@keyframes animate {
-  0%,
-  10%,
-  100% {
-      width: 0;
-  }
-
-  70%,
-  90% {
-      width: 100%;
-  }
+  background: rgba(0, 0, 0, 0.4); /* Adjust transparency */
+  z-index: 1;
 }
